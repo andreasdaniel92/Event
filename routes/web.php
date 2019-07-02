@@ -19,6 +19,13 @@ Route::get('/event', 'EventController@index');
 Route::get('/event/tambah', 'EventController@tambah');
 Route::post('/event/store', 'EventController@store');
 
+Route::get('/events', 'EventController@events');
+
+Route::get('events/{nama_event}', [
+    'as'     => 'event.search',
+    'uses' => 'Event\EventController@searchEvent',
+]);
+
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";

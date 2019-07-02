@@ -1,2 +1,0 @@
-# Event
-Event test code
